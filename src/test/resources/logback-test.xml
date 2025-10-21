@@ -1,0 +1,16 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Desactivar logs de Hibernate, JPA y SLF4J -->
+    <logger name="org.hibernate" level="OFF"/>
+    <logger name="jakarta.persistence" level="OFF"/>
+    <logger name="org.slf4j" level="OFF"/>
+
+    <root level="OFF">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

@@ -1,0 +1,21 @@
+<configuration>
+    <!-- Appender a consola -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Hibernate y JPA en WARN para no mostrar SQL -->
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="jakarta.persistence" level="WARN"/>
+
+    <!-- Mostrar INFO solo de nuestro paquete -->
+    <logger name="com.biblioteca" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
